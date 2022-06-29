@@ -1,0 +1,8 @@
+POST http://localhost:3000/product
+Content-Type: application/json
+
+{
+    "name": "Celular",
+    "price": 1899.9,
+    "description": "Iphone mais legal di bãozão."
+}
