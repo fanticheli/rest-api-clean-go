@@ -1,6 +1,6 @@
 {
     "database": {
-      "url": "://postgres:postgres@localhost:5432/fanticheli"
+      "url": "://postgres:postgres@postgres:5432/fanticheli"
     },
     "server": {
       "port": "3000"
