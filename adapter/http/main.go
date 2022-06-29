@@ -36,6 +36,13 @@ func main() {
 	jsonApiRouter.Use(middleware.Cors)
 
 	jsonApiRouter.Handle("/product", http.HandlerFunc(productService.Create)).Methods("POST", "OPTIONS")
+	jsonApiRouter.Handle("/product", http.HandlerFunc(productService.Fetch)).Queries(
+		"page", "{page}",
+		"itemsPerPage", "{itemsPerPage}",
+		"descending", "{descending}",
+		"sort", "{sort}",
+		"search", "{search}",
+	).Methods("GET", "OPTIONS")
 
 	port := viper.GetString("server.port")
 
