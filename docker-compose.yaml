@@ -12,8 +12,6 @@ services:
       - 5432:5432
     volumes:
       - ./database/db:/var/lib/postgresql/data
-    networks:
-      - app-network
 
   pgadmin:
     image: dpage/pgadmin4
@@ -24,8 +22,6 @@ services:
     environment:
       PGADMIN_DEFAULT_EMAIL: pgadmin4@pgadmin.org
       PGADMIN_DEFAULT_PASSWORD: fanticheli
-    networks:
-      - app-network
 
   app:
     build: .
@@ -35,11 +31,5 @@ services:
     container_name: rest-api-clean-go
     volumes:
       - .:/home/golang/app
-    networks:
-      - app-network
     depends_on:
       - postgres
-
-networks:
-  app-network:
-    driver: bridge
