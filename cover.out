@@ -1,0 +1,17 @@
+mode: set
+github.com/fanticheli/rest-api-clean-go/core/dto/pagination.go:19.95,32.2 4 1
+github.com/fanticheli/rest-api-clean-go/core/dto/product.go:16.82,18.76 2 1
+github.com/fanticheli/rest-api-clean-go/core/dto/product.go:22.2,22.35 1 1
+github.com/fanticheli/rest-api-clean-go/core/dto/product.go:18.76,20.3 1 1
+github.com/fanticheli/rest-api-clean-go/adapter/postgres/productrepository/create.go:12.28,29.16 4 1
+github.com/fanticheli/rest-api-clean-go/adapter/postgres/productrepository/create.go:33.2,33.22 1 1
+github.com/fanticheli/rest-api-clean-go/adapter/postgres/productrepository/create.go:29.16,31.3 1 1
+github.com/fanticheli/rest-api-clean-go/adapter/postgres/productrepository/fetch.go:11.104,24.2 5 1
+github.com/fanticheli/rest-api-clean-go/adapter/postgres/productrepository/fetch.go:56.2,59.8 1 1
+github.com/fanticheli/rest-api-clean-go/adapter/postgres/productrepository/fetch.go:24.2,30.17 2 1
+github.com/fanticheli/rest-api-clean-go/adapter/postgres/productrepository/fetch.go:34.3,34.19 1 1
+github.com/fanticheli/rest-api-clean-go/adapter/postgres/productrepository/fetch.go:30.17,32.4 1 1
+github.com/fanticheli/rest-api-clean-go/adapter/postgres/productrepository/fetch.go:34.19,45.4 3 1
+github.com/fanticheli/rest-api-clean-go/adapter/postgres/productrepository/fetch.go:48.2,51.17 2 1
+github.com/fanticheli/rest-api-clean-go/adapter/postgres/productrepository/fetch.go:51.17,53.4 1 1
+github.com/fanticheli/rest-api-clean-go/adapter/postgres/productrepository/new.go:13.62,17.2 1 1
