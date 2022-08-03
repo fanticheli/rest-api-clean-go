@@ -12,6 +12,10 @@ import (
 	"github.com/fanticheli/rest-api-clean-go/di"
 	"github.com/gorilla/mux"
 	"github.com/spf13/viper"
+
+	httpSwagger "github.com/swaggo/http-swagger"
+
+	_ "github.com/fanticheli/rest-api-clean-go/adapter/http/docs"
 )
 
 func init() {
@@ -22,6 +26,13 @@ func init() {
 	}
 }
 
+// @title Clean GO API Docs
+// @version 1.0.0
+// @contact.name Igor Fanticheli
+// @license.name Apache 2.0
+// @license.url http://www.apache.org/licenses/LICENSE-2.0.html
+// @host localhost:3000
+// @BasePath /
 func main() {
 	ctx := context.Background()
 	conn := postgres.GetConnection(ctx)
@@ -35,6 +46,7 @@ func main() {
 	jsonApiRouter := router.PathPrefix("/").Subrouter()
 	jsonApiRouter.Use(middleware.Cors)
 
+	router.PathPrefix("/swagger").Handler(httpSwagger.WrapHandler)
 	jsonApiRouter.Handle("/product", http.HandlerFunc(productService.Create)).Methods("POST", "OPTIONS")
 	jsonApiRouter.Handle("/product", http.HandlerFunc(productService.Fetch)).Queries(
 		"page", "{page}",
