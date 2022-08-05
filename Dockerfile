@@ -14,7 +14,7 @@ RUN mv config.json ./deploy/config.json
 RUN mv database ./deploy/database
 
 
-FROM scratch AS production
+FROM alpine:3.7 AS production
 COPY --from=builder /go/api/deploy /api/
 
 WORKDIR /api
