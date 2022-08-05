@@ -24,7 +24,7 @@ jobs:
           sed -i -e 's/$DB_HOST/'${{ secrets.DB_HOST }}'/g' config.json
           cat config.json
 
-      - uses: akhileshns/heroku-deploy@v3.10.9
+      - uses: akhileshns/heroku-deploy@master
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "rest-api-clean-go"
