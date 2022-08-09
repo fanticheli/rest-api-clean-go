@@ -1,1 +1,4 @@
 go.sum
+/database/db
+cover.html
+cover.out
