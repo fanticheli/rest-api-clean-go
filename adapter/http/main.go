@@ -15,7 +15,7 @@ import (
 
 	httpSwagger "github.com/swaggo/http-swagger"
 
-	_ "github.com/fanticheli/rest-api-clean-go/adapter/http/docs"
+	_ "github.com/fanticheli/rest-api-clean-go/adapter/http/rest/docs"
 )
 
 func init() {

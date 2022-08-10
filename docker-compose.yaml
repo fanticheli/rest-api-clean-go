@@ -1,0 +1,35 @@
+version: "3"
+
+services:
+  postgres:
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=fanticheli
+    ports:
+      - 5432:5432
+    volumes:
+      - ./database/db:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    depends_on:
+      - postgres
+    ports:
+      - 8080:80
+    environment:
+      PGADMIN_DEFAULT_EMAIL: pgadmin4@pgadmin.org
+      PGADMIN_DEFAULT_PASSWORD: fanticheli
+
+  app:
+    build: .
+    ports:
+      - 3000:3000
+    restart: on-failure
+    container_name: rest-api-clean-go
+    volumes:
+      - .:/home/golang/app
+    depends_on:
+      - postgres
